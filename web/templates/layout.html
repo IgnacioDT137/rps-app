@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='images/icon.ico')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/journal/bootstrap.min.css" integrity="sha384-QDSPDoVOoSWz2ypaRUidLmLYl4RyoBWI44iA5agn6jHegBxZkNqgm2eHb6yZ5bYs" crossorigin="anonymous">
+    <title>
+        {% block title %}
+        Layout
+        {% endblock %}
+    </title>
+</head>
+<body class="d-flex flex-column align-items-center min-vh-100">
+    <header class="bg-primary w-100">
+        <h1 class="text-center">Piedra, papel o tijeras!</h1>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="mt-auto w-100 bg-primary">
+        <h6 class="text-center">Desarrollado por Ignacio Díaz | Todos los derechos reservados</h6>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block title %}
+Piedra, papel o tijeras!
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4 d-flex flex-column align-items-center border border-2 border-primary" style="border-radius: 10px;">
+    <h1 class="text-center">Bienvenido!</h1>
+    <h2 class="text-center mt-4">Elige una de las tres opciones!</h2>
+    <div class="btn-group-lg mt-4">
+        <a href="/auth/piedra" class="btn btn-primary">Piedra</a>
+        <a href="/auth/papel" class="btn btn-primary">Papel</a>
+        <a href="/auth/tijeras" class="btn btn-primary">Tijeras</a>
+    </div>
+    <div class="container-fluid">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <h3 class="text-center mt-4">Resultado:</h3>
+                <h2 class="text-center mt-4">{{ message }}</h2>
+                {% endfor %}
+            {% else %}
+            <h3 class="text-center mt-4">Resultado</h3>
+            <h2 class="text-center mt-4">...</h2>
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+
+<div class="container mt-auto d-flex justify-content-center mb-4 border border-2 border-primary p-4" style="border-radius: 10px;">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-3">
+        <div class="col d-flex justify-content-center">
+            <img src="{{url_for('static', filename='images/rock.png')}}" alt="piedra">
+        </div>
+        <div class="col d-flex justify-content-center">
+            <img src="{{url_for('static', filename='images/paper.png')}}" alt="papel">
+        </div>
+        <div class="col d-flex justify-content-center">
+            <img src="{{url_for('static', filename='images/scissors.png')}}" alt="tijera">
+        </div>
+    </div>
+</div>
+{% endblock %}
